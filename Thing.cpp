@@ -37,3 +37,11 @@ Json::Value Thing::dump2JSON() {
 
     return result;
 }
+
+std::string Thing::getName() {
+    return this->name;
+}
+
+void Thing::setName(std::string newName) {
+    this->name = newName;
+}
