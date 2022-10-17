@@ -21,10 +21,10 @@ Person::Person(){
 void Person::setHome(GPS arg_home){
     this->home = arg_home;
 }
-//void Person::setLocation(GPS arg_location, JvTime arg_time){
-//    this->location = arg_location;
-//    this->since_when = arg_time;
-//}
+void Person::setLocation(GPS arg_location, JvTime arg_time){
+    this->location = arg_location;
+    this->since_when = arg_time;
+}
 void Person::setHealth(bool arg_health){
     this->isHealthy = arg_health;
 }
@@ -45,10 +45,46 @@ GPS Person::getLocation(){
     return this->location;
 }
 //Do later:
-//JvTime Person::getLocationTime(){
-//    return this-> since_when;
-//}
+JvTime Person::getLocationTime(){
+    return this-> since_when;
+}
+
 //Dump Method
-//Json::Value Person::dump2JSON(){
-//
+Json::Value //created empty lang
+Person::dump2JSON
+        (void)
+{
+    Json::Value result { }; //trigger constructor
+    //empty json result
+
+    if (this->name != "")
+    {
+        result["name"] = this->name;
+    }
+
+    if (this->type != "")
+    {
+        result["type"] = this->type;
+    }
+
+    if (this->isHealthy != null)
+    {
+        result["isHealthy"] = this->isHealthy;
+    }
+
+    Json::Value jv_result;  //empty JSON::Value
+
+    jv_result = (this->home).dump2JSON();
+    result["home"] = jv_result;
+
+    jv_result = (this->location).dump2JSON();
+    result["location"] = jv_result;
+
+    jv_result = (this->since_when).dump2JSON();
+    result["since_when"] = jv_result;
+
+    std::cout << jv_result.toStyledString() << std::endl;
+
+    return result;
+}
 //}

@@ -27,7 +27,7 @@ private:
     std::string type;
     GPS home;
     GPS location;
-//    JvTime since_when;
+    JvTime since_when;
 public:
     //Constructors:
     Person(std::string, std::string, GPS, bool);
@@ -44,10 +44,11 @@ public:
     std::string getType();
     GPS getHome();
     GPS getLocation();
-//    JvTime getLocationTime();
+    JvTime getLocationTime();
+    void setLocation(GPS , JvTime);
 
     //Dump Method
-//    Json::Value dump2JSON();
+    Json::Value dump2JSON();
 };
 
 

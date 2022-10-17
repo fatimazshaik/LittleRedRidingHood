@@ -33,7 +33,7 @@ public:
     std::string getLandmarks();
     double getLeagues();
     double distance(GPS);
-//    Json::Value dump2JSON();
+    Json::Value dump2JSON();
 };
 
 

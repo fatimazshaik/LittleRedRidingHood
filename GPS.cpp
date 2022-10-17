@@ -31,3 +31,21 @@ double GPS::getLeagues(){
 double GPS::distance(GPS another){
     return (this->leagues - another.getLeagues());
 }
+Json::Value GPS::dump2JSON
+        () {
+    Json::Value result;
+    if (this->name  != "") {
+        result["name"] = this->name;
+    }
+
+    if (this->locatedIn  != "") {
+        result["locatedIn"] = this->locatedIn;
+    }
+    if (this->landmarks  != "") {
+        result["landmarks"] = this->landmarks;
+    }
+    if (this->leagues != 0.0) {
+        result["leagues"] = this->leagues;
+    }
+    return result;
+}
