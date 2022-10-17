@@ -1,14 +1,27 @@
 //
-// Created by Fatima Shaik on 10/9/22.
+// Created by Teni on 10/10/2022.
 //
+#include "GeneralLibraries"
 
-#ifndef UHW_2_JVTIME_H
-#define UHW_2_JVTIME_H
+#ifndef HW2_TIME_H
+#define HW2_TIME_H
+    class JvTime {
+    public:
+        bool validTimeFormat;
+        int year;
+        int month;
+        int day;
+        int hour;
+        int minute;
+        int second;
+        int tail4;
+        JvTime(const char *);
+        JvTime();
+        struct std::tm * getStdTM();
+        int setStdTM(struct std::tm *);
+        std::string * getTimeString();
+        Json::Value dump2JSON();
+    };
 
-
-class JvTime {
-
-};
-
-
-#endif //UHW_2_JVTIME_H
+    JvTime getTime(void);
+#endif //HW2_TIME_H
