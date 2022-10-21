@@ -4,17 +4,14 @@
 
 #include "Person.h"
 //Constructors:
-Person::Person(std::string arg_name, std::string arg_type, GPS arg_home, bool arg_health){
+Person::Person(std::string arg_name, GPS arg_home){
     this->name =arg_name;
     this->home = arg_home;
-    this->type = arg_type;
-    this->isHealthy = arg_health;
 }
 Person::Person(){
     this->name = "";
     this->home = GPS{};
     this->type = "";
-    this->isHealthy = false;
 }
 
 //Setter Methods (Members)
@@ -25,13 +22,7 @@ void Person::setLocation(GPS arg_location, JvTime arg_time){
     this->location = arg_location;
     this->since_when = arg_time;
 }
-void Person::setHealth(bool arg_health){
-    this->isHealthy = arg_health;
-}
-//Getter Methods (Members)
-bool Person::getIsHealthy(){
-    return this->isHealthy;
-}
+
 std::string Person::getName(){
     return this->name;
 }
@@ -49,27 +40,26 @@ JvTime Person::getLocationTime(){
     return this-> since_when;
 }
 
+bool Person::isBlankPerson(){
+    return (this->name == "");
+}
+
 //Dump Method
 Json::Value //created empty lang
 Person::dump2JSON
         (void)
 {
-    Json::Value result { }; //trigger constructor
+    Json::Value result; //trigger constructor
     //empty json result
-
-    if (this->name != "")
+//
+    if (name != "")
     {
-        result["name"] = this->name;
+    result["name"] = this->name;
     }
 
-    if (this->type != "")
+   if (this->type != "")
     {
-        result["type"] = this->type;
-    }
-
-    if (this->isHealthy != null)
-    {
-        result["isHealthy"] = this->isHealthy;
+       result["type"] = this->type;
     }
 
     Json::Value jv_result;  //empty JSON::Value

@@ -11,10 +11,10 @@
 #include <cstdlib>
 
 // for Json::value
-//#include <json/json.h>
-//#include <json/reader.h>
-//#include <json/writer.h>
-//#include <json/value.h>
+#include <json/json.h>
+#include <json/reader.h>
+#include <json/writer.h>
+#include <json/value.h>
 
 
 class GPS {
@@ -28,6 +28,8 @@ private:
 public:
     explicit GPS();
     explicit GPS(std::string, std::string, std::string, double);
+    explicit GPS(std::string, std::string);
+    explicit GPS(std::string arg_name, std::string arg_landmarks, double arg_leagues);
     std::string getName();
     std::string getLocatedIn();
     std::string getLandmarks();

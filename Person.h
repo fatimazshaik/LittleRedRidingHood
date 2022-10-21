@@ -11,17 +11,17 @@
 #include <cstdlib>
 
 // for Json::value
-//#include <json/json.h>
-//#include <json/reader.h>
-//#include <json/writer.h>
-//#include <json/value.h>
+#include <json/json.h>
+#include <json/reader.h>
+#include <json/writer.h>
+#include <json/value.h>
 
 #include "GPS.h"
+#include "JvTime.h"
 
 
 class Person {
 private:
-    bool isHealthy;
     std::string name;
     //is creature, girl, boy, adult, elderly, ect.
     std::string type;
@@ -30,7 +30,7 @@ private:
     JvTime since_when;
 public:
     //Constructors:
-    Person(std::string, std::string, GPS, bool);
+    Person(std::string, GPS);
     Person();
 
     //Setter Methods (Members)
@@ -39,13 +39,13 @@ public:
     void setHealth(bool);
 
     //Getter Methods (Members)
-    bool getIsHealthy();
-    std::string getName();
+    std::string getName(void);
     std::string getType();
     GPS getHome();
     GPS getLocation();
     JvTime getLocationTime();
     void setLocation(GPS , JvTime);
+    bool isBlankPerson();
 
     //Dump Method
     Json::Value dump2JSON();

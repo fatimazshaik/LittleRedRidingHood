@@ -16,6 +16,18 @@ GPS::GPS(std::string arg_name, std::string arg_locatedIn, std::string arg_landma
     this->leagues = arg_leagues;
 }
 
+GPS::GPS(std::string arg_name, std::string arg_locatedIn){
+    this->name = arg_name;
+    this->locatedIn = arg_locatedIn;
+    this->leagues = 0.0;
+}
+
+GPS::GPS(std::string arg_name, std::string arg_landmarks, double arg_leagues){
+    this->name = arg_name;
+    this->landmarks = arg_landmarks;
+    this->leagues = arg_leagues;
+}
+
 std::string GPS::getName(){
     return this->name;
 }

@@ -13,7 +13,7 @@
     #include <sstream>
     #include <ctime>
     #include <exception>
-    #include <time.h>
+    #include <JvTime.h>
 
     // for Json::value
     #include <json/json.h>
