@@ -1,51 +1,31 @@
 //
 // Created by Teni on 10/10/2022.
 //
+#include "GeneralLibraries"
 
-#ifndef _JVTIME_H_
-#define _JVTIME_H_
+#ifndef HW2_TIME_H
+#define HW2_TIME_H
+    class JvTime {
+    public:
+        bool validTimeFormat;
+        int year;
+        int month;
+        int day;
+        int hour;
+        int minute;
+        int second;
+        int tail4;
 
-#include <strings.h>
-#include <string>
-#include <iostream>
-#include <stdio.h>
-#include <iomanip>
-#include <cstdlib>
-#include <sstream>
-#include <ctime>
-#include <exception>
-#include <time.h>
+        JvTime(const char *);
+        JvTime();
 
-// for Json::value
-#include <json/json.h>
-#include <json/reader.h>
-#include <json/writer.h>
-#include <json/value.h>
+        struct std::tm * getStdTM();
+        int setStdTM(struct std::tm *);
+        std::string * getTimeString();
+        Json::Value dump2JSON();
+    };
 
-using namespace std;
+    JvTime * getNowJvTime();
+    bool isBlankTime();
 
-class JvTime
-{
-private:
-protected:
-public:
-    bool good;
-    int year;
-    int month;
-    int day;
-    int hour;
-    int minute;
-    int second;
-    char tail4[64];
-
-    JvTime(const char *);
-    JvTime() { }
-    struct std::tm * getStdTM(void);
-    int setStdTM(struct std::tm *);
-    std::string * getTimeString(void);
-    Json::Value dump2JSON();
-};
-
-JvTime *getNowJvTime(void);
-
-#endif /* _JVTIME_H_ */
+#endif //HW2_TIME_H
