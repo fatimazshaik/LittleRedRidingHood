@@ -27,7 +27,7 @@ int main() {
     Wine.setOwner(LittleRedRidingHood);
     //Second Record: Her mom gave her the cake and wine.
     Record Second = Record(Cake, Wine, LittleRedRidingHood, Mother, LittleRedHouse, *getNowJvTime());
-//    std::cout << (Second.dump2JSON()).toStyledString() << std::endl;
+   std::cout << (Second.dump2JSON()).toStyledString() << std::endl;
 
     GPS meetingSpot = GPS ("entrance of the woods", "Woods");
     GPS wolfHome = GPS("Somewhere in woods", "Woods");
@@ -36,14 +36,13 @@ int main() {
     Wolf.setLocation(meetingSpot, *getNowJvTime());
     //Third Record: Little Red met the wolf at a particular spot in the wood
     Record Third = Record (LittleRedRidingHood, Wolf, meetingSpot, *getNowJvTime());
-//    std::cout << (Third.dump2JSON()).toStyledString() << std::endl;
+   std::cout << (Third.dump2JSON()).toStyledString() << std::endl;
 
     GPS grandmotherHouse = GPS("Grandma's house", "end of Woods", "three large oak", 0.5);
     Person Grandma = Person("Grandma", grandmotherHouse);
     Grandma.setLocation(grandmotherHouse, *getNowJvTime());
     //Fourth Record: Grandma was at her own home right outside of the wood and there were three large oak trees nearby
     Record Fourth = Record(Grandma, grandmotherHouse, *getNowJvTime());
-//    std::cout << (Fourth.dump2JSON()).toStyledString() << std::endl;
-
+   std::cout << (Fourth.dump2JSON()).toStyledString() << std::endl;
 
 }
