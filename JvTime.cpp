@@ -120,7 +120,6 @@ Json::Value JvTime::dump2JSON() {
     std::string *str_ptr = this->getTimeString();
     result["time"] = (*str_ptr);
     delete str_ptr;
-    return result;
 }
 
 //Checks if time is blank; utilizes and frees allocated memory used to convert JvTime
