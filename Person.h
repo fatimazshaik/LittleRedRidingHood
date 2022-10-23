@@ -1,6 +1,6 @@
 //
 // Created by Fatima Shaik on 10/9/22.
-//
+// Header file for Person
 
 #ifndef UHW_2_PERSON_H
 #define UHW_2_PERSON_H
@@ -31,6 +31,7 @@ private:
 public:
     //Constructors:
     Person(std::string, GPS);
+    Person(std::string);
     Person();
 
     //Setter Methods (Members)

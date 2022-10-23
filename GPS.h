@@ -1,6 +1,6 @@
 //
 // Created by Fatima Shaik on 10/9/22.
-//
+// Header File for GPS
 
 #ifndef UHW_2_GPS_H
 #define UHW_2_GPS_H
@@ -29,7 +29,7 @@ public:
     explicit GPS();
     explicit GPS(std::string, std::string, std::string, double);
     explicit GPS(std::string, std::string);
-    explicit GPS(std::string arg_name, std::string arg_landmarks, double arg_leagues);
+    explicit GPS(std::string, std::string , double);
     std::string getName();
     std::string getLocatedIn();
     std::string getLandmarks();

@@ -1,28 +1,36 @@
 //
 // Created by Fatima Shaik on 10/9/22.
-//
+// .cpp file for PErson
 
 #include "Person.h"
-//Constructors:
+//Person Constructors:
 Person::Person(std::string arg_name, GPS arg_home){
     this->name =arg_name;
     this->home = arg_home;
 }
+
+Person::Person(std::string arg_name){
+    this->name =arg_name;
+}
+
 Person::Person(){
     this->name = "";
     this->home = GPS{};
     this->type = "";
 }
 
-//Setter Methods (Members)
+//Sets Home Location of Person:
 void Person::setHome(GPS arg_home){
     this->home = arg_home;
 }
+
+//Sets the current Location of the Person
 void Person::setLocation(GPS arg_location, JvTime arg_time){
     this->location = arg_location;
     this->since_when = arg_time;
 }
 
+//Returns name of the person
 std::string Person::getName(){
     return this->name;
 }
@@ -72,8 +80,6 @@ Person::dump2JSON
 
     jv_result = (this->since_when).dump2JSON();
     result["since_when"] = jv_result;
-
-    std::cout << jv_result.toStyledString() << std::endl;
 
     return result;
 }

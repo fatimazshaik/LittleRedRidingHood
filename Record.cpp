@@ -1,12 +1,13 @@
 //
 // Created by Fatima Shaik on 10/17/22.
-//
+// .cpp file on Record
 
 #include "Record.h"
 
 //Blank Person:
 Person blankPerson = Person();
 
+//Record Constructors
 Record::Record(Thing item1, Person person1, GPS loc, JvTime time){
     this->thingOne = item1;
     this->personOne = person1;
@@ -48,7 +49,7 @@ Record::Record(){
     this->time = JvTime{};
 }
 
-
+//returns contents of record in a JSON format
 Json::Value Record::dump2JSON() {
     Json::Value result;
     Json::Value jv_result;
@@ -78,9 +79,9 @@ Json::Value Record::dump2JSON() {
         result["location"] = jv_result;
     }
 
-    jv_result = (this->time).dump2JSON();
-    result["time"] = jv_result;
+//    jv_result = (this->time).dump2JSON();
+//    result["time"] = jv_result;
 
-    std::cout << jv_result.toStyledString() << std::endl;
+//    std::cout << jv_result.toStyledString() << std::endl;
     return result;
 }
