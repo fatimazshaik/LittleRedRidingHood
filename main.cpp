@@ -1,5 +1,5 @@
 //
-// Created by Fatima Shaik on 10/9/22.
+// Created by Fatima and Teni on 10/9/22.
 // main file which creates/prints all the Records
 
 #include <iostream>
