@@ -1,5 +1,5 @@
 # LittleRedRidingHood
-Written by Fatima Shaik (Id:) and Oluwateniola Sanusi (Id: 919781261).
+Written by Fatima Shaik (Id: 919710410) and Oluwateniola Sanusi (Id: 919781261).
 
 Homework Assignment 2 for ECS 36B
 
